@@ -63,12 +63,12 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
-                    <span class="glyphicon glyphicon-log-in"></span>
-                    Login
-                    </a>                        
+                    <li>
+                        <a data-toggle="modal" data-target="#loginModal">
+                            <span class="glyphicon glyphicon-log-in"></span> Login
+                        </a>
                     </li>
-                </ul>                                                                                                           
+                </ul>
             </div>
         </div>
     </nav>
@@ -101,6 +101,49 @@
             </div>
         </div>
     </div>
+    <div id="reserveTableModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"> &times; </button>
+                    <h4 class="modal-title">Reserve Table</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <div class="row radio">
+                                <div class="col-xs-2 col-sm-2">
+                                    <label for="Guests"> Number of Guests</label>
+                                </div>
+                                <div class="col-xs-10 col-sm-10">
+                                    <label>
+                                        <input type="radio" name="optradio">1</label>
+                                    <label>
+                                        <input type="radio" name="optradio">2</label>
+                                    <label>
+                                        <input type="radio" name="optradio">3</label>
+                                    <label>
+                                        <input type="radio" name="optradio">4</label>
+                                    <label>
+                                        <input type="radio" name="optradio">5</label>
+                                    <label>
+                                        <input type="radio" name="optradio">6</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div type="submit" class="btn btn-primary">Reserve</div>
+                                <div type="submit" class="btn btn-default" data-dismiss="modal">Cancel</div>
+                            </div>
+                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Warning!</strong> Please <strong>call</strong> us to reserve for more than six guests.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="jumbotron">
 
         <!-- Main component for a primary marketing message or call to action -->
@@ -115,14 +158,57 @@
                 </div>
                 <div class="col-xs-12 col-sm-4">
                     <p style="padding:40px;"></p>
-                    <a type="button" class="btn btn-warning btn-block" data-toggle="tooltip" title="Or Call us at +57 3002061607" data-placement="bottom"
-                    href="#reserveform">Reserve Table</a>
+                    <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveTableModal">Reserve Table</a>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container">
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img class="img-responsive" src="img/uthappizza.png" alt="Uthappizza">
+                            <div class="carousel-caption">
+                                <h2>Uthappizza  <span class="label label-danger">Hot</span> <span class="badge">$4.99</span></h2>
+                                <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola
+                                    olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                                <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="img/uthappizza.png" alt="Uthappizza">
+                            <div class="carousel-caption">
+                                <h2>Weekend Grand Buffet <span class="label label-danger label-xs">New</span></h2> ...
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="img/uthappizza.png" alt="Uthappizza">
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         <div class="row row-content">
             <div class="col-xs-12 col-sm-3 col-sm-push-9">
                 <p style="padding:20px;"></p>
@@ -164,6 +250,33 @@
                 <p><a href="#">More &raquo;</a></p>
             </div>
         </div>
+
+        <!--<div id="reserveform" class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Reserve Form</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                 <div class="row">
+                     <div class="col-xs-2 col-sm-3">
+                         <label for="Guests" class="control-label">Number of Guests</label>
+                     </div>
+                     
+                     
+                 </div>
+                 <div class="row">
+                     <label for="Section" class="control-label">Section</label>
+                 </div>
+                 <div class="row">
+                     <label for="DateTime" class="control-label">Date and Time</label>                     
+                 </div>                                  
+            </div>
+        </div>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Warning!</strong> Please <strong>call</strong> us to reserve for more than six guests.
+        </div>-->
+        <!--
         <div id="reserveform" class="row row-content">
             <div class="col-xs-12 col-sm-9">
                 <h2>Reserve Form</h2>
@@ -173,6 +286,7 @@
                 <p><a href="#">More &raquo;</a></p>
             </div>
         </div>
+        -->
     </div>
 
     <footer class="container">
